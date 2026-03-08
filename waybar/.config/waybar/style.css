@@ -1,0 +1,59 @@
+* {
+  font-size: 15px; 
+  font-family: "CodeNewRoman Nerd Font Propo";
+  transition: all .5s ease;
+  border-radius: 0px;
+  background: transparent;
+  color: #ebdbb2; 
+  padding: 0px;
+}
+
+#clock, #workspaces, #custom-playerctl, #custom-power, #cpu, #memory, #custom-tomat, #pulseaudio, #network
+{
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background: #282828;
+  border: none;
+  border-bottom: 2px solid #3c3836;
+  /*border-top: none;*/
+}
+
+#custom-tomat.work-paused, #custom-tomat.break-paused, #custom-tomat.long-break-paused {
+  background: #b57614;
+}
+
+
+window#waybar {
+  background: #1d2021;
+}
+
+#workspaces {
+  padding-right: 4px;
+}
+
+/* #workspaces button { */
+/*   min-width: 20px; */
+/* } */
+
+#workspaces button.active {
+  background: #98971a;
+}
+
+#clock {
+  margin-right: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+#custom-power {
+  margin-left: 10px;
+  padding-left: 10px;
+  padding-right: 5px;
+}
+#custom-playerctl {
+  padding-left: 5px;
+}
+
+
+
