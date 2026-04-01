@@ -1,59 +1,80 @@
 * {
-  font-size: 15px; 
-  font-family: "CodeNewRoman Nerd Font Propo";
-  transition: all .5s ease;
-  border-radius: 0px;
-  background: transparent;
-  color: #ebdbb2; 
-  padding: 0px;
-}
-
-#clock, #workspaces, #custom-playerctl, #custom-power, #cpu, #memory, #custom-tomat, #pulseaudio, #network
-{
-  margin-left: 5px;
-  margin-right: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  background: #282828;
   border: none;
-  border-bottom: 2px solid #3c3836;
-  /*border-top: none;*/
-}
+  border-radius: 5;
+  /* font-family: Roboto, Helvetica, Arial, sans-serif; */
+  font-family: "JetBrainsMono Nerd Font Propo";
+  font-size: 16px;
 
-#custom-tomat.work-paused, #custom-tomat.break-paused, #custom-tomat.long-break-paused {
-  background: #b57614;
-}
+  transition: all .1s ease;
 
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+}
 
 window#waybar {
-  background: #1d2021;
+  background: rgba(1, 1, 1, 0.7);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, .5);
 }
 
+tooltip {
+  background: rgba(43, 48, 59, 0.5);
+  border: 1px solid rgba(100, 114, 125, 0.5);
+}
+
+tooltip label {
+  color: white;
+}
+
+
+#clock,
+#battery,
+#custom-playerctl,
+#pulseaudio,
+#network,
+#custom-power,
+#workspaces button {
+  margin: 3px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 3px;
+  background-color: RGBA(100, 100, 100, .5);
+  color: white;
+}
+
+/* far left */
 #workspaces {
-  padding-right: 4px;
+  margin-left: 3px;
 }
 
-/* #workspaces button { */
-/*   min-width: 20px; */
-/* } */
+/* far right */
+#custom-power {
+  margin-right: 6px;
+}
 
 #workspaces button.active {
-  background: #98971a;
+  background-color: RGBA(200, 200, 200, .5);
 }
 
-#clock {
-  margin-right: 10px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-#custom-power {
-  margin-left: 10px;
-  padding-left: 10px;
-  padding-right: 5px;
-}
-#custom-playerctl {
-  padding-left: 5px;
+#battery.charging {
+  color: white;
+  background-color: #26A65B;
 }
 
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: black;
+  }
+}
 
-
+#battery.warning:not(.charging) {
+  background: #f53c3c;
+  color: white;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
